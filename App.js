@@ -4,9 +4,8 @@ import {Alert} from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 import axios from "axios";
+import {WEATHER_API_KEY} from "./environment.js"
 
-// api key 숨기기, env 파일의 변수엔 REACT_APP이 무조건 앞에 와야한다. 
-const API_KEY = process.env.REACT_APP_WEATHER_KEY;
 
 export default class extends React.Component {
 	state = {
@@ -15,7 +14,7 @@ export default class extends React.Component {
 
 	// define get openweather api function
 	getWeather = async(latitude, longitude) => {
-		const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+		const { data } = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`);
 		console.log(data);
 	};
 	getLocation = async() => {
