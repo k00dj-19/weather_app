@@ -1,19 +1,79 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, Text, StyleSheet } from "react-native";
-import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import { View, Text, StyleSheet, StatusBar } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+ 
+const weatherOptions = {
+	Haze: {
+		iconName: "dehaze",
+		gradient: ["#4DA0B0", "D39D38"]
+	},
+	Thunderstorm: {
+		iconName: "",
+		gradient: []
+	},
+	Drizzle: {
+		iconName: "",
+		gradient: []
+	},
+	Rain: {
+		iconName: "",
+		gradient: []		
+	},
+	Snow: {
+		iconName: "",
+		gradient: []		
+	},
+	Atmosphere: {
+		iconName: "",
+		gradient: []		
+	},
+	Clear: {
+		iconName: "",
+		gradient: []		
+	},
+	Cloud: {
+		iconName: "",
+		gradient: []		
+	},
+	Mist: {
+		iconName: "",
+		gradient: []		
+	},
+	Smoke: {
+		iconName: "",
+		gradient: []		
+	},
+	Haze: {
+		iconName: "",
+		gradient: []		
+	},
+	Dust: {
+		iconName: "",
+		gradient: []		
+	},
+}
+
 
 export default function Weather({temp}){
 	return (
-		<View style={styles.container}>
-				<View style={styles.halfContainer}>
-					<Feather name="cloud-rain" size={96} color="black" />
-					<Text style={styles.temp}>{temp}°</Text>
-				</View>
-				<View style={styles.halfContainer}>
-
-				</View>
-		</View>
+		<LinearGradient 
+			colors={weatherOptions[condition].gradient}
+			style={styles.container}
+		>
+			<StatusBar barStyle="light=content"/>
+			<View style={styles.halfContainer}>
+				<MaterialCommunityIcons
+					name={weatherOptions[condition].iconName}
+					size={96}
+					color="white"
+				/>
+				<Text style={styles.temp}>{temp}°</Text>
+			</View>
+			<View style={styles.halfContainer}>
+			</View>
+		</LinearGradient>
 	);
 }
 
@@ -31,11 +91,6 @@ Weather.propTypes = {
 		"Smoke",
 		"Haze", // 연무
 		"Dust",
-		"Fog", // 안개
-		"Sand",
-		"Ash",
-		"Squall",
-		"Tornado"
 	]).isRequired
 };
 
@@ -47,6 +102,7 @@ const styles = StyleSheet.create({
 	},
 	temp: {
 		fontSize: 42,
+		color: "white",
 	},
 	halfContainer: {
 		flex: 1,
