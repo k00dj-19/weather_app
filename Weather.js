@@ -6,66 +6,62 @@ import { LinearGradient } from 'expo-linear-gradient';
  
 const weatherOptions = {
 	Haze: {
-		iconName: "dehaze",
-		gradient: ["#4DA0B0", "D39D38"]
+		iconName: "weather-hail",
+		gradient: ["#4DA0B0", "#D39D38"]
 	},
 	Thunderstorm: {
-		iconName: "",
-		gradient: []
+		iconName: "weather-lightning",
+		gradient: ["#181818", "#BA8B02"]
 	},
 	Drizzle: {
-		iconName: "",
-		gradient: []
+		iconName: "weather-rainy",
+		gradient: ["#3a6073", "#3a7bd5"]
 	},
 	Rain: {
-		iconName: "",
-		gradient: []		
+		iconName: "weather-pouring",
+		gradient: ["#283E51", "#4B79A1"]		
 	},
 	Snow: {
-		iconName: "",
-		gradient: []		
+		iconName: "weather-snowy",
+		gradient: ["#ADA996", "#EAEAEA"]		
 	},
 	Atmosphere: {
-		iconName: "",
-		gradient: []		
+		iconName: "soundcloud",
+		gradient: ["#C6FFDD","#FBD786","#DBDBDB"]		
 	},
 	Clear: {
-		iconName: "",
-		gradient: []		
+		iconName: "white-balance-sunny",
+		gradient: ["#f8b500", "#fceabb", "#DBDBDB"]		
 	},
 	Cloud: {
-		iconName: "",
-		gradient: []		
+		iconName: "weather-cloudy",
+		gradient: ["#2c3e50","#bdc3c7"]		
 	},
 	Mist: {
-		iconName: "",
-		gradient: []		
+		iconName: "weather-fog",
+		gradient: ["#000000","#e74c3c"]		
 	},
 	Smoke: {
-		iconName: "",
-		gradient: []		
-	},
-	Haze: {
-		iconName: "",
-		gradient: []		
+		iconName: "weather-fog",
+		gradient: ["#3f4c6b","#606c88"]		
 	},
 	Dust: {
-		iconName: "",
-		gradient: []		
-	},
+		iconName: "weather-hail",
+		gradient: ["#544a7d", "#ffd452"]		
+	}
 }
 
 
-export default function Weather({temp}){
+export default function Weather({temp, condition}){
 	return (
 		<LinearGradient 
-			colors={weatherOptions[condition].gradient}
+			colors={weatherOptions['Dust'].gradient}
 			style={styles.container}
 		>
-			<StatusBar barStyle="light=content"/>
+			<StatusBar barStyle="light-content"/>
 			<View style={styles.halfContainer}>
 				<MaterialCommunityIcons
-					name={weatherOptions[condition].iconName}
+					name={weatherOptions['Dust'].iconName}
 					size={96}
 					color="white"
 				/>
