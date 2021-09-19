@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "myapp",
-    "slug": "myapp",
+    "name": "weather-app",
+    "slug": "weather-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/weather.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,13 +17,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+			"bundleIdentifier": "com.dongjin.weatherApp",
+			"buildNumber": "1.0.0",
+			"supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/weather.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+			"package": "com.dongjin.weatherApp",
+			"versionCode": 1
+			
     },
     "web": {
       "favicon": "./assets/favicon.png"
