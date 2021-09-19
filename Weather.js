@@ -7,11 +7,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 const weatherOptions = {
 	Haze: {
 		iconName: "weather-hail",
-		gradient: ["#4DA0B0", "#D39D38"]
+		gradient: ["#4DA0B0", "#D39D38"],
+		title: "Haze",
+		subtitle: "Just don't go outside"
 	},
 	Thunderstorm: {
 		iconName: "weather-lightning",
-		gradient: ["#181818", "#BA8B02"]
+		gradient: ["#373B44", "#4286f4"]
 	},
 	Drizzle: {
 		iconName: "weather-rainy",
@@ -31,7 +33,9 @@ const weatherOptions = {
 	},
 	Clear: {
 		iconName: "white-balance-sunny",
-		gradient: ["#f8b500", "#fceabb", "#DBDBDB"]		
+		gradient: ["#f8b500", "#fceabb", "#DBDBDB"],
+		title: "Clear",
+		subtitle: "It's Sunny Day!!"
 	},
 	Cloud: {
 		iconName: "weather-cloudy",
@@ -55,19 +59,21 @@ const weatherOptions = {
 export default function Weather({temp, condition}){
 	return (
 		<LinearGradient 
-			colors={weatherOptions['Dust'].gradient}
+			colors={weatherOptions[condition].gradient}
 			style={styles.container}
 		>
 			<StatusBar barStyle="light-content"/>
 			<View style={styles.halfContainer}>
 				<MaterialCommunityIcons
-					name={weatherOptions['Dust'].iconName}
+					name={weatherOptions[condition].iconName}
 					size={96}
 					color="white"
 				/>
 				<Text style={styles.temp}>{temp}°</Text>
 			</View>
-			<View style={styles.halfContainer}>
+			<View style={{...styles.halfContainer, ...styles.textContainer}}>
+				<Text style={styles.title}>{weatherOptions[condition].title}</Text>
+				<Text style={styles.subtitle}>{weatherOptions[condition].subtitle}</Text>
 			</View>
 		</LinearGradient>
 	);
@@ -104,5 +110,20 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center"
+	},
+	title: {
+		color: "white",
+		fontSize: 44,
+		fontWeight: "300",
+		marginBottom: 10
+	},
+	subtitle:{
+		color: "white",
+		fontSize: 24,
+		fontWeight: "600"
+	},
+	textContainer: {
+		paddingHorizontal: 20,
+		alignItems: "flex-start"
 	}
 })

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, StatusBar } from "react-native";
 export default function Loading(){
 	return (
 		<View style={styles.container}>
-			<StatusBar barStyle="dark-content" />
+			<StatusBar barStyle="white-content" />
 			<Text style={styles.text}>Getting the wonderful weather</Text>
 		</View>
 	);
