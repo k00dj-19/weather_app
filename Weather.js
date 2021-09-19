@@ -13,23 +13,27 @@ const weatherOptions = {
 	},
 	Thunderstorm: {
 		iconName: "weather-lightning",
-		gradient: ["#373B44", "#4286f4"]
+		gradient: ["#373B44", "#4286f4"],
+		title: "Thunderstorm in the house",
+		subtitle: "Actually, outside of the house"
 	},
 	Drizzle: {
 		iconName: "weather-rainy",
-		gradient: ["#3a6073", "#3a7bd5"]
+		gradient: ["#3a6073", "#3a7bd5"],
+		title: "Drizzle",
+		subtitle: "Is like rain, but rainbow.."
 	},
 	Rain: {
 		iconName: "weather-pouring",
-		gradient: ["#283E51", "#4B79A1"]		
+		gradient: ["#283E51", "#4B79A1"],
+		title: "Rain",
+		subtitle: "Take an umbrella"
 	},
 	Snow: {
 		iconName: "weather-snowy",
-		gradient: ["#ADA996", "#EAEAEA"]		
-	},
-	Atmosphere: {
-		iconName: "soundcloud",
-		gradient: ["#C6FFDD","#FBD786","#DBDBDB"]		
+		gradient: ["#ADA996", "#EAEAEA"],
+		title: "Snow",
+		subtitle: "Do you want to build the snowman~~? Let's make a snowman~~"
 	},
 	Clear: {
 		iconName: "white-balance-sunny",
@@ -37,21 +41,29 @@ const weatherOptions = {
 		title: "Clear",
 		subtitle: "It's Sunny Day!!"
 	},
-	Cloud: {
+	Clouds: {
 		iconName: "weather-cloudy",
-		gradient: ["#2c3e50","#bdc3c7"]		
+		gradient: ["#2c3e50","#bdc3c7"],
+		title: "Cloud",
+		subtitle: "It's like my mind.."
 	},
 	Mist: {
 		iconName: "weather-fog",
-		gradient: ["#000000","#e74c3c"]		
+		gradient: ["#000000","#e74c3c"],
+		title: "Mist!",
+		subtitle: "It's like you have no glasses on."
 	},
 	Smoke: {
 		iconName: "weather-fog",
-		gradient: ["#3f4c6b","#606c88"]		
+		gradient: ["#3f4c6b","#606c88"],
+		title: "Smoke!",
+		subtitle: "You don't see anything"
 	},
 	Dust: {
 		iconName: "weather-hail",
-		gradient: ["#544a7d", "#ffd452"]		
+		gradient: ["#544a7d", "#ffd452"],
+		title: "Dusty",
+		subtitle: "Thanks a lot China!"
 	}
 }
 
@@ -86,7 +98,6 @@ Weather.propTypes = {
 		"Drizzle", // 이슬비
 		"Rain",
 		"Snow",
-		"Atmosphere",
 		"Clear",
 		"Clouds",
 		"Mist",
